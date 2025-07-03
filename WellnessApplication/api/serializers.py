@@ -19,6 +19,10 @@ class RegisterSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"password":"Passwords don't match"})
         return attrs
     
+    def validate_age(self,value):
+        if not 1 <= value <=100:
+            raise serializers.ValidationError("Invalid age range")
+
     def validate_self_reported_stress(self,value):
         if not 1 <= value <=10:
             raise serializers.ValidationError("Stress level only from 1-10")

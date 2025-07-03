@@ -40,12 +40,21 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'api',
+    'drf_spectacular'
 ]
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS':'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE':'Wellness App API',
+    'DESCRIPTION':'API DOCS for wellness application',
+    'VERSION':'1.0',
+    'SERVE_INCLUDE_SCHEMA':False,
 }
 
 MIDDLEWARE = [
