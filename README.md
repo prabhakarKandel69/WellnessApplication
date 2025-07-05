@@ -1,6 +1,8 @@
 upon cloning this repository:
 
 perform:
+
+
 1)virtual\Scripts\activate \
 
 
